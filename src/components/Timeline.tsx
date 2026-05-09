@@ -140,7 +140,7 @@ export default function Timeline() {
         </div>
 
         {/* Scrolling Container */}
-        <motion.div style={{ x }} className="flex items-center gap-16 md:gap-32 px-12 md:px-24 mt-20 relative z-20">
+        <motion.div style={{ x }} className="flex w-max items-center gap-16 md:gap-32 px-12 md:px-24 mt-20 relative z-20">
           {TIMELINE.map((item, index) => (
             <TimelineCard 
               key={item.season} 

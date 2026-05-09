@@ -72,7 +72,7 @@ export default function FamilyOverview() {
                 family.accent
               )} />
               
-              <div className="relative glass-dark p-8 md:p-12 rounded-[2rem] border border-white/5 h-[400px] md:h-[450px] flex flex-col justify-between z-10 overflow-hidden bg-black/80 group-hover:border-white/10 transition-all duration-700 shadow-2xl group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+              <div className="relative glass-dark p-8 md:p-12 rounded-[2rem] border border-white/5 h-[400px] md:h-[450px] flex flex-col justify-end z-10 overflow-hidden bg-black/80 group-hover:border-white/10 transition-all duration-700 shadow-2xl group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 opacity-100 md:opacity-30 md:group-hover:opacity-60 transition-opacity duration-700">
                   <Image 
@@ -107,14 +107,7 @@ export default function FamilyOverview() {
                   </p>
                 </div>
                 
-                <div className="mt-8 pt-8 border-t border-white/5 flex items-center justify-between relative z-10 group-hover:border-white/20 transition-colors duration-700">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500 group-hover:text-white transition-colors">Explore House</span>
-                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent group-hover:scale-110 transition-all duration-500">
-                    <svg className="w-4 h-4 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
-                </div>
+
               </div>
             </motion.div>
           ))}
