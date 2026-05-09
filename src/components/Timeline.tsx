@@ -36,16 +36,26 @@ function TimelineCard({ item, index, total }: { item: any; index: number; total:
           
           {/* Background Image (if present) */}
           {item.image && (
-            <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-70 transition-opacity duration-1000">
+            <div className="absolute inset-0 z-0 opacity-100 md:opacity-40 md:group-hover:opacity-70 transition-opacity duration-1000">
               <Image 
                 src={item.image} 
                 alt={item.event} 
                 fill 
-                className="object-cover object-top sm:object-center mix-blend-luminosity group-hover:mix-blend-normal group-hover:scale-110 transition-all duration-1000 ease-[0.25,0.1,0.25,1]"
+                className="object-cover object-top sm:object-center mix-blend-normal md:mix-blend-luminosity md:group-hover:mix-blend-normal md:group-hover:scale-110 transition-all duration-1000 ease-[0.25,0.1,0.25,1]"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-transparent to-transparent opacity-80" />
+
+              {/* Mobile-Only Scroll Glow Overlay */}
+              <motion.div 
+                className="absolute inset-0 backdrop-grayscale bg-black/60 md:hidden pointer-events-none z-10"
+                initial={{ opacity: 1 }}
+                whileInView={{ opacity: 0 }}
+                viewport={{ margin: "-30%" }}
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent pointer-events-none z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-transparent to-transparent opacity-80 z-10" />
             </div>
           )}
 

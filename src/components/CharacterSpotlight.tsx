@@ -72,13 +72,22 @@ export default function CharacterSpotlight() {
               <div className="absolute inset-0 bg-[#0a0a0a] rounded-[2rem] overflow-hidden z-10 border border-white/5 shadow-2xl shadow-black group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)] transition-all duration-700 flex flex-col justify-end group-hover:-translate-y-2">
                 
                 {/* Image Container with Parallax Hover */}
-                <div className="absolute inset-0 bg-neutral-900 transition-transform duration-1000 ease-[0.25,0.1,0.25,1] group-hover:scale-110">
+                <div className="absolute inset-0 bg-neutral-900 transition-transform duration-1000 ease-[0.25,0.1,0.25,1] md:group-hover:scale-110">
                   <Image 
                     src={char.image} 
                     alt={char.name} 
                     fill 
-                    className="object-cover object-top sm:object-center opacity-60 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-100 transition-all duration-700"
+                    className="object-cover object-top sm:object-center opacity-100 md:opacity-60 mix-blend-normal md:mix-blend-luminosity md:group-hover:mix-blend-normal md:group-hover:opacity-100 transition-all duration-700"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  
+                  {/* Mobile-Only Scroll Glow Overlay */}
+                  <motion.div 
+                    className="absolute inset-0 backdrop-grayscale bg-black/50 md:hidden pointer-events-none z-10"
+                    initial={{ opacity: 1 }}
+                    whileInView={{ opacity: 0 }}
+                    viewport={{ margin: "-30%" }}
+                    transition={{ duration: 0.7, ease: "easeInOut" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent z-10 pointer-events-none" />
                 </div>

@@ -74,15 +74,25 @@ export default function FamilyOverview() {
               
               <div className="relative glass-dark p-8 md:p-12 rounded-[2rem] border border-white/5 h-[400px] md:h-[450px] flex flex-col justify-between z-10 overflow-hidden bg-black/80 group-hover:border-white/10 transition-all duration-700 shadow-2xl group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 {/* Background Image */}
-                <div className="absolute inset-0 z-0 opacity-30 group-hover:opacity-60 transition-opacity duration-700">
+                <div className="absolute inset-0 z-0 opacity-100 md:opacity-30 md:group-hover:opacity-60 transition-opacity duration-700">
                   <Image 
                     src={family.image} 
                     alt={family.name} 
                     fill 
-                    className="object-cover object-top sm:object-center mix-blend-luminosity group-hover:mix-blend-normal group-hover:scale-110 transition-all duration-1000 ease-[0.25,0.1,0.25,1]"
+                    className="object-cover object-top sm:object-center mix-blend-normal md:mix-blend-luminosity md:group-hover:mix-blend-normal md:group-hover:scale-110 transition-all duration-1000 ease-[0.25,0.1,0.25,1]"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-transparent pointer-events-none" />
+                  
+                  {/* Mobile-Only Scroll Glow Overlay */}
+                  <motion.div 
+                    className="absolute inset-0 backdrop-grayscale bg-black/60 md:hidden pointer-events-none z-10"
+                    initial={{ opacity: 1 }}
+                    whileInView={{ opacity: 0 }}
+                    viewport={{ margin: "-30%" }}
+                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-transparent pointer-events-none z-10" />
                 </div>
                 
                 {/* Subtle Background Pattern */}
