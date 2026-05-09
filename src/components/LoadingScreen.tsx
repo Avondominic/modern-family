@@ -67,7 +67,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
         initial={{ opacity: 0, scale: 0.01 }}
         animate={{
           opacity: [0, 0, 0.4, 0.4, 1, 1, 0, 0],
-          scale: [0.01, 0.01, 0.05, 0.05, 3.5, 3.5, 3.5, 3.5],
+          scale: [0.01, 0.01, 0.05, 0.05, 2.5, 2.5, 2.5, 2.5],
           filter: [
             "brightness(0) contrast(1)", 
             "brightness(0) contrast(1)", 
